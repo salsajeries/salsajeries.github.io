@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+.App {
+  font-family: 'Varela Round', sans-serif;
+  color: #EAE0D5;
+  margin: 5%;
+  display: block;
+}
+
+.spacer {
+  width: 100%;
+  height: 28vh;
+}
+
+.sections {
+  padding-top: 15vh;
+}
+
+.textArea {
+  font-size: 20px;
+}
+
+.header-title {
+  font-size: 100px;
+}
+
+.header-textArea {
+  font-size: 40px;
+}
+
+.styled-img {
+  max-width: 100%;
+  border-radius: 10%;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0.5rem 0.5rem black;
+}
+
+.styled-img:hover {
+  box-shadow: 1rem 1rem black;
+  transform: scale(1.04);
+}
+
+.styled-img:active {
+  box-shadow: 0.5rem 0.5rem black;
+  transform: translateY(0px);
+  transition: 0.12s ease-in-out;
+}
+
+footer {
+  margin-top: 15vh;
+  font-family: 'Varela Round', sans-serif;
+  color: #C6AC8F;
+  background-color: #0C1214;
+  padding: 5%;
+}
+
+.hand-wave {
+  max-width: 100%;
+  transform: rotate(60deg);
+  transition: all 0.2s ease-in-out;
+}
+
+.hand-wave:hover {
+  max-width: 100%;
+  animation: rotation 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+.hand-wave:active {
+  transform: rotate(60deg) scale(1.25);
+}
+
+@keyframes rotation {
+  0%, 100% {
+    transform: rotate(60deg) scale(1);
+  }
+  50% {
+    transform: rotate(77.5deg) scale(1.25);
+  }
+  10%, 90% {
+    transform: rotate(77.5deg) scale(1.05);
+  }
+  30%, 70% {
+    transform: rotate(52.5deg) scale(1.15);
+  }
+}
