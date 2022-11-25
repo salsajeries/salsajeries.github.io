@@ -31,7 +31,8 @@
 }
 
 .styled-img {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   border-radius: 10%;
   transition: all 0.2s ease-in-out;
   box-shadow: 0.5rem 0.5rem black;
@@ -57,7 +58,8 @@ footer {
 }
 
 .hand-wave {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   transform: rotate(60deg);
   transition: all 0.2s ease-in-out;
 }

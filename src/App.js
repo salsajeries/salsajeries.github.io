@@ -57,11 +57,11 @@ function App() {
 
         <div id='about-me' className='sections' data-aos='fade-up'>
           <Row>
-            <Col sm={4}>
+            <Col md={4}>
               <img src={Portrait} alt='A nice picture of me!' className='styled-img' />
             </Col>
             <Col sm={1}></Col>
-            <Col sm={7}>
+            <Col md={7}>
               <TitleType title={"about me"}/>
               <p className='textArea'>
                 My name is Salwa Jeries, I'm a sophomore at The University of Alabama in Huntsville majoring in computer science with a math minor. I have a background in cyber security and love to make cool websites. I want to explore software engineering and web development for a career so that I can make fun projects - like this site - for others to enjoy as well! In my free time, I like to play piano, cuddle with my hot dog (Lily), and checkout all the new local coffee shops!
