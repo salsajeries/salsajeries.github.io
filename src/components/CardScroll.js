@@ -34,14 +34,26 @@ function CardScroll() {
             )
         },
         {
+            title: "Unscene",
+            dates: "Aug 2022 - Dec 2022",
+            url: "https://github.com/salsajeries/Unscene",
+            details: (
+                <ul>
+                    <li>Web application that displays dynamic UAH classroom availability for students to find study rooms on campus</li>
+                    <li>Uses React.js for front-end and .NET for back-end</li>
+                    <li>Uses Google Maps API for locational data on interactive map</li>
+                </ul>
+            )
+        },
+        {
             title: "Adventure to the Sun",
             dates: "Oct 2022",
             url: "https://github.com/salsajeries/spaceapps-2022",
             details: (
                 <ul>
-                    <li>48-hour simulative game that allows the user to play as the Parker Solar Probe on its mission</li>
-                    <li>Raw data from the solar probe is used to generate solar particles containing velocity and temperature, which the player must collect for points</li>
-                    <li>3D game developed in Godot game engine</li>
+                    <li>Semester team project developing a desktop Java application with Apache Netbeans</li>
+                    <li>Movie and TV Show manager that allows creation of watchlists and progress dashboard of media as the user watches</li>
+                    <li>Pulls data from TheMovieDB API for all media</li>
                 </ul>
             )
         },
@@ -62,7 +74,7 @@ function CardScroll() {
             url: "https://github.com/salsajeries/GigaHurtzFrontEnd",
             details: (
                 <ul>
-                    <li>38-hour web application that connects refugees with host families based on user preferences</li>
+                    <li>48-hour web application that connects refugees with host families based on user preferences</li>
                     <li>Compatability algorithm based on a point system generates a compatability score for match rankings</li>
                 </ul>
             )
