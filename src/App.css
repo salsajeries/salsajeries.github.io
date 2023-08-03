@@ -20,6 +20,7 @@
 
 .textArea {
   font-size: 20px;
+  text-align: justify;
 }
 
 .header-title {
@@ -28,6 +29,7 @@
 
 .header-textArea {
   font-size: 40px;
+  width: fit-content;
 }
 
 .styled-img {
@@ -55,6 +57,24 @@ footer {
   color: #C6AC8F;
   background-color: #0C1214;
   padding: 5%;
+}
+
+.chevron-down {
+  width: 10%;
+  height: auto;
+  animation: pulsate 2s infinite;
+  transition: ease-out;
+}
+
+@keyframes pulsate {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: translateY(30px);
+    opacity: 1;
+  }
 }
 
 .hand-wave {

@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Wave from './assets/hand-wave.png'
 import Portrait from './assets/myself.jpeg';
+import ChevronDown from './assets/chevron-down.png'
 import GithubIcon from './assets/github.svg';
 import LinkedinIcon from './assets/linkedin.svg';
 
@@ -43,9 +44,14 @@ function App() {
                     .start();
                 }}
               />
-              <p className='header-textArea'>
-                Here's a little bit about me.
-              </p>
+              <div className='header-textArea'>
+                <p>
+                  Here's a little bit about me.
+                </p>
+                <a href='#about-me' style={{display: 'flex', justifyContent: 'center', textDecoration: 'none'}}>
+                  <img id='chevron' src={ChevronDown} alt='Scroll down' className='chevron-down' />
+                </a>
+              </div>
             </Col>
             <Col md={4}>
               <img id='hand' src={Wave} alt='Hey there!' className='hand-wave'/>
@@ -58,13 +64,16 @@ function App() {
         <div id='about-me' className='sections' data-aos='fade-up'>
           <Row>
             <Col md={4}>
-              <img src={Portrait} alt='A nice picture of me!' className='styled-img' />
+              <img src={Portrait} alt='A nice picture of me!' style={{font: 'white'}} className='styled-img' />
             </Col>
             <Col sm={1}></Col>
             <Col md={7}>
               <TitleType title={"about me"}/>
               <p className='textArea'>
-                My name is Salwa Jeries, I'm a sophomore at The University of Alabama in Huntsville majoring in computer science with a math minor. I have a background in cyber security and love to make cool websites. I want to explore software engineering and web development for a career so that I can make fun projects - like this site - for others to enjoy as well! In my free time, I like to play piano, cuddle with my hot dog (Lily), and checkout all the new local coffee shops!
+                My name is Salwa Jeries, I'm a junior at The University of Alabama in Huntsville majoring in computer science with a math minor.
+                I'm interested in software engineering and particularly web development for a career so that I can make fun projects - like this site -
+                for others to enjoy as well! In my free time, you'll find me playing piano, cuddling with my two dachshunds, and checking out all the
+                new local coffee shops!
               </p>
             </Col>
           </Row>
