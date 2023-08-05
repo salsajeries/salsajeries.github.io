@@ -1,7 +1,5 @@
 import './GalleryScroll.css'
 import StyledImage from './StyledImage';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 
 
 

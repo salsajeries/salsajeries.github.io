@@ -1,7 +1,6 @@
 import './ProjectMenu.css';
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -16,8 +15,6 @@ import {
     PW1, PW2, PW3, PW4,
     NCW1, NCW2
 } from '../assets/images'
-
-import Fade from 'react-reveal/Fade';
 
 
 function TabPanel(props) {

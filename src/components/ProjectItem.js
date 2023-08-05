@@ -1,7 +1,6 @@
 import { Github, Website } from '../assets/images';
 import GalleryScroll from './GalleryScroll';
 import './ProjectItem.css'
-import MechButton from './MechButton';
 import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
 
