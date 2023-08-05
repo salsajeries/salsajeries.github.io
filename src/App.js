@@ -1,18 +1,16 @@
 import { useEffect } from 'react';
 import './App.css';
 import TitleType from './components/TitleType';
-import CardScroll from './components/CardScroll';
 import MechButton from './components/MechButton';
 import Typewriter from 'typewriter-effect';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Wave from './assets/hand-wave.png'
-import Portrait from './assets/myself.jpeg';
-import ChevronDown from './assets/chevron-down.png'
-import GithubIcon from './assets/github.svg';
-import LinkedinIcon from './assets/linkedin.svg';
+import { Portrait, ChevronDown, Github, LinkedIn, HandWave } from './assets/images';
+import StyledImage from './components/StyledImage';
+import ProjectMenu from './components/ProjectMenu';
+
 
 function App() {
 
@@ -48,13 +46,15 @@ function App() {
                 <p>
                   Here's a little bit about me.
                 </p>
-                <a href='#about-me' style={{display: 'flex', justifyContent: 'center', textDecoration: 'none'}}>
-                  <img id='chevron' src={ChevronDown} alt='Scroll down' className='chevron-down' />
-                </a>
+                <div style={{ height: '200px'}}>
+                  <a href='#about-me' style={{display: 'flex', justifyContent: 'center', textDecoration: 'none'}}>
+                    <img id='chevron' src={ChevronDown} alt='Scroll down' className='chevron-down' />
+                  </a>
+                </div>
               </div>
             </Col>
             <Col md={4}>
-              <img id='hand' src={Wave} alt='Hey there!' className='hand-wave'/>
+              <img id='hand' src={HandWave} alt='Hey there!' className='hand-wave'/>
             </Col>
           </Row>
         </div>
@@ -64,7 +64,7 @@ function App() {
         <div id='about-me' className='sections' data-aos='fade-up'>
           <Row>
             <Col md={4}>
-              <img src={Portrait} alt='A nice picture of me!' style={{font: 'white'}} className='styled-img' />
+              <StyledImage src={Portrait} alt={'A nice picture of me!'} height={'100%'}></StyledImage>
             </Col>
             <Col sm={1}></Col>
             <Col md={7}>
@@ -81,21 +81,23 @@ function App() {
 
         <div id='projects' className='sections' data-aos='fade-up'>
           <TitleType title={"projects"}/>
-          <p className='textArea'><br/>Click to open project link.</p>
-          <CardScroll/>
+          <p className='textArea'><br/>Select a project to view more details. Scroll left to view more projects.</p>
+          <ProjectMenu></ProjectMenu>
         </div>
 
         <div id='links' className='sections' data-aos='fade-up'>
           <TitleType title={"links"}/>
-          <MechButton src={GithubIcon} url={"https://github.com/salsajeries"} alt={"github.com/salsajeries"} />
-          <MechButton src={LinkedinIcon} url={"https://www.linkedin.com/in/salwa-jeries-17a146226/"} alt={"Salwa Jeries on Linkedin"} />
+          <div style={{display: 'flex'}}>
+            <MechButton src={Github} url={"https://github.com/salsajeries"} alt={"github.com/salsajeries"} width={'90px'} height={'90px'} />
+            <MechButton src={LinkedIn} url={"https://www.linkedin.com/in/salwa-jeries-17a146226/"} alt={"Salwa Jeries on Linkedin"} width={'90px'} height={'90px'} />
+          </div>
         </div>
 
       </div>
       
       <footer>
-        <p className='textArea'>Salwa Jeries</p>
-        <p className='textArea'>Made with Reactjs</p>
+        <p className='textArea'>Made with React.js</p>
+        <p className='textArea'>Copyright © 2023 Salwa Jeries</p>
       </footer>
     </div>
     

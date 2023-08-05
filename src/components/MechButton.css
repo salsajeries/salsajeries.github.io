@@ -8,6 +8,7 @@ img {
     width: fit-content;
     background-color: #C6AC8F;
     color: #5E503F;
+    border-radius: 15px;
     transition: all 0.2s ease-in-out;
     box-shadow: 0.5rem 0.5rem black;
 }
