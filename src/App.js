@@ -71,7 +71,7 @@ function App() {
               <TitleType title={"about me"}/>
               <p className='textArea'>
                 My name is Salwa Jeries, I'm a junior at The University of Alabama in Huntsville majoring in computer science with a math minor.
-                I'm interested in software engineering and particularly web development for a career so that I can make fun projects - like this site -
+                I'm interested in software engineering and particularly web and app development for a career so that I can make fun projects - like this site -
                 for others to enjoy as well! In my free time, you'll find me playing piano, cuddling with my two dachshunds, and checking out all the
                 new local coffee shops!
               </p>

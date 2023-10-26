@@ -7,7 +7,7 @@ import Avatar from '@mui/material/Avatar';
 
 function ProjectItem(props) {
 
-    const { project, images} = props;
+    const { project, images } = props;
 
     return (
         <div className='project-item'>
@@ -34,8 +34,18 @@ function ProjectItem(props) {
                     <></>
                 )}
             </div>
-            {images.size !== 0 ? (
-                <GalleryScroll images={images}></GalleryScroll>
+            <br></br>
+            {images.length !== 0 ? (
+                <h5><i>Scroll or swipe in the gallery to view more screenshots.</i></h5>
+            ) : (
+                <></>
+            )}
+            {images.length !== 0 ? (
+                project.url !== '' ? (
+                    <GalleryScroll images={images} url={project.url}></GalleryScroll>
+                ) : (
+                    <GalleryScroll images={images} url={project.github}></GalleryScroll>
+                )
             ) : (
                 <></>
             )}
