@@ -77,6 +77,8 @@
   }
 }
 
-html {
+html,
+body {
   font-family: 'Varela Round', sans-serif;
+  scroll-behavior: smooth;
 }
