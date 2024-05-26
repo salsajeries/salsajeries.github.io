@@ -23,27 +23,21 @@ export default function Home() {
   }, []);
 
   // Calculate the horizontal position of the div in vw units
-  const maxScroll = 500; // Maximum scroll value at which position stops changing
+  const maxScroll = 1000; // Maximum scroll value at which position stops changing
   const horizontalPositionVW = Math.max(
     0,
     initialXPositionVW - (scrollPosition / maxScroll) * initialXPositionVW
   );
 
-  // const maxScroll = 300; // Adjust this value to control the speed, smaller value = faster movement
-  // const horizontalPositionVW = Math.max(
-  //   -initialXPositionVW, // Allow the element to go off screen on mobile
-  //   initialXPositionVW - (scrollPosition / maxScroll) * initialXPositionVW
-  // );
-
   return (
     <div>
       <div
         style={{ transform: `translateX(calc(${horizontalPositionVW}vw))` }}
-        className="fixed flex h-[100vh] items-center justify-center p-10"
+        className="fixed flex h-[100vh] items-center justify-center ml-10 mr-10"
       >
-        <div className="flex-col w-[50vw]">
+        <div className="flex-col w-auto justify-center">
           <TypewriterTitle title="hi, i'm salwa" size="7vw" />
-          <div style={{ fontSize: "3vw" }}>
+          <div style={{ fontSize: "2vw" }} className="w-auto">
             <Typewriter
               options={{
                 delay: 50,
@@ -61,13 +55,12 @@ export default function Home() {
               }}
             />
           </div>
-          <a href="#new-section">Test</a>
         </div>
       </div>
-      <div className="h-[100vh]" id="empty-home"></div>
-      <div className="h-[100vh] flex items-center justify-end" id="about">
+      <section className="h-[100vh]" id="empty-home"></section>
+      <section className="h-[100vh] flex items-center justify-end" id="about">
         <About />
-      </div>
+      </section>
     </div>
   );
 }
