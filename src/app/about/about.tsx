@@ -1,9 +1,16 @@
 import TypewriterTitle from "../../components/TypewriterTitle";
 import "../globals.css";
+import useMediaQuery from "../hooks/use-media-query";
 
 export default function About() {
+  const isDesktop = useMediaQuery("(min-width: 786px)");
+
   return (
-    <div className="flex flex-col w-[50vw] p-10 items-end justify-center">
+    <div
+      className={`flex flex-col ${
+        isDesktop ? "w-[50vw] items-end" : "w-[100vw] items-center"
+      } p-10 justify-center`}
+    >
       <TypewriterTitle title={"about me"} size={"5vw"} />
       <p className="sm:text-justify sm:text-xl">
         My name is Salwa Jeries, I'm a senior at The University of Alabama in

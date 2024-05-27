@@ -4,16 +4,24 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Data from "../data/project_data.json";
 import TypewriterTitle from "@/components/TypewriterTitle";
+import useMediaQuery from "../hooks/use-media-query";
 
 export default function Projects() {
+  const isDesktop = useMediaQuery("(min-width: 786px)");
+
   return (
-    <div className="flex flex-col items-end justify-center">
+    <div
+      className={`flex flex-col ${
+        isDesktop ? "w-[50vw] items-end" : "w-[100vw] items-center"
+      } p-10 justify-center`}
+    >
       <TypewriterTitle title={"projects"} size={"5vw"} />
       {Data.map((project: any) => (
         <Dialog key={project.title}>
@@ -32,6 +40,7 @@ export default function Projects() {
                 })}
               </DialogDescription>
             </DialogHeader>
+            <DialogFooter>{}</DialogFooter>
           </DialogContent>
         </Dialog>
       ))}

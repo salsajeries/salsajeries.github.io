@@ -9,7 +9,7 @@ import Projects from "./projects/projects";
 import useMediaQuery from "./hooks/use-media-query";
 
 export default function Home() {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useMediaQuery("(min-width: 786px)");
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const initialXPositionVW = 25; // Initial horizontal position in viewport width units (vw)
