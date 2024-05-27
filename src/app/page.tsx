@@ -6,10 +6,15 @@ import Typewriter from "typewriter-effect";
 import "./globals.css";
 import About from "./about/about";
 import Projects from "./projects/projects";
+import useMediaQuery from "./hooks/use-media-query";
 
 export default function Home() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   const [scrollPosition, setScrollPosition] = useState(0);
   const initialXPositionVW = 25; // Initial horizontal position in viewport width units (vw)
+  const maxScroll = 1000; // Maximum scroll value at which position stops changing
+  const maxOffsetVW = 150; // The horizontal offset (in vw) needed to move the element completely off the screen
 
   const updateHorizontalPosition = () => {
     const position = window.scrollY;
@@ -26,12 +31,21 @@ export default function Home() {
     };
   }, []);
 
-  // Calculate the horizontal position of the div in vw units
-  const maxScroll = 950; // Maximum scroll value at which position stops changing
-  const horizontalPositionVW = Math.max(
-    0,
-    initialXPositionVW - (scrollPosition / maxScroll) * initialXPositionVW
-  );
+  let horizontalPositionVW;
+  if (isDesktop) {
+    // Calculate the horizontal position of the div in vw units
+    const maxScroll = 950; // Maximum scroll value at which position stops changing
+    horizontalPositionVW = Math.max(
+      0,
+      initialXPositionVW - (scrollPosition / maxScroll) * initialXPositionVW
+    );
+  } else {
+    // Calculate the horizontal position of the div in vw units
+    horizontalPositionVW = Math.max(
+      -maxOffsetVW,
+      initialXPositionVW - (scrollPosition / maxScroll) * maxOffsetVW
+    );
+  }
 
   return (
     <div>
