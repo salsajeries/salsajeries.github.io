@@ -3,7 +3,7 @@ import "../globals.css";
 
 export default function About() {
   return (
-    <div className="flex-col w-[50vw] p-10">
+    <div className="flex flex-col w-[50vw] p-10 items-end justify-center">
       <TypewriterTitle title={"about me"} size={"5vw"} />
       <p className="sm:text-justify sm:text-xl">
         My name is Salwa Jeries, I'm a senior at The University of Alabama in
