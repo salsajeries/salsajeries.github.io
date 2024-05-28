@@ -33,6 +33,7 @@ export default function Home() {
 
   let horizontalPositionVW;
   if (isDesktop) {
+    // FOR DESKTOP
     // Calculate the horizontal position of the div in vw units
     const maxScroll = 950; // Maximum scroll value at which position stops changing
     horizontalPositionVW = Math.max(
@@ -40,10 +41,11 @@ export default function Home() {
       initialXPositionVW - (scrollPosition / maxScroll) * initialXPositionVW
     );
   } else {
+    // FOR MOBILE
     // Calculate the horizontal position of the div in vw units
     horizontalPositionVW = Math.max(
       -maxOffsetVW,
-      initialXPositionVW - (scrollPosition / maxScroll) * maxOffsetVW
+      initialXPositionVW - 3 - (scrollPosition / maxScroll) * maxOffsetVW
     );
   }
 
@@ -51,11 +53,16 @@ export default function Home() {
     <div>
       <div
         style={{ transform: `translateX(calc(${horizontalPositionVW}vw))` }}
-        className="fixed flex h-[100vh] items-center justify-center ml-10 mr-10"
+        className="fixed flex h-[100vh] items-center justify-center ml-10"
       >
-        <div className="flex-col justify-center">
+        <div className="flex-col justify-center w-[50vw]">
           <TypewriterTitle title="hi, i'm salwa" size="7vw" />
-          <div style={{ fontSize: "2vw" }} className="w-auto">
+          <div
+            style={{
+              fontSize: `${isDesktop ? "2vw" : "1em"}`,
+            }}
+            className="w-full"
+          >
             <Typewriter
               options={{
                 delay: 50,

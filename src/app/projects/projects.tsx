@@ -12,6 +12,7 @@ import {
 import Data from "../data/project_data.json";
 import TypewriterTitle from "@/components/TypewriterTitle";
 import useMediaQuery from "../hooks/use-media-query";
+import ImageSlider from "./ImageSlider";
 
 export default function Projects() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
@@ -22,25 +23,44 @@ export default function Projects() {
         isDesktop ? "w-[50vw] items-end" : "w-[100vw] items-center"
       } p-10 justify-center`}
     >
-      <TypewriterTitle title={"projects"} size={"5vw"} />
-      {Data.map((project: any) => (
-        <Dialog key={project.title}>
+      <TypewriterTitle
+        title={"projects"}
+        size={`${isDesktop ? "4em" : "2.5em"}`}
+      />
+      {Data.map((p: any, index: number) => (
+        <Dialog key={p.title}>
           <DialogTrigger
-            className="mb-5 mt-5 uppercase hover:-translate-x-5 "
-            style={{ fontSize: "2vw", transition: "transform 0.18s ease-out" }}
+            className={`mb-5 mt-5 uppercase ${
+              isDesktop ? "hover:-translate-x-5" : ""
+            }`}
+            style={{
+              fontSize: `${isDesktop ? "1.5em" : "1em"}`,
+              transition: "transform 0.18s ease-out",
+            }}
           >
-            {project.title}
+            {p.title}
           </DialogTrigger>
           <DialogContent className="w-full">
             <DialogHeader>
-              <DialogTitle>{project.title}</DialogTitle>
+              <DialogTitle style={{ fontSize: "2.5em" }} className="pb-3">
+                {p.title}
+              </DialogTitle>
               <DialogDescription>
-                {project.details.map((d: string, i: number) => {
-                  return <li key={i}>{d}</li>;
+                <p style={{ fontSize: "1.5em" }} className="pb-3">
+                  {p.dates}
+                </p>
+                {p.details.map((d: string, i: number) => {
+                  return (
+                    <li key={i} style={{ fontSize: "1em" }}>
+                      {d}
+                    </li>
+                  );
                 })}
               </DialogDescription>
             </DialogHeader>
-            <DialogFooter>{}</DialogFooter>
+            <DialogFooter>
+              <ImageSlider project={index} />
+            </DialogFooter>
           </DialogContent>
         </Dialog>
       ))}

@@ -1,6 +1,5 @@
 [
   {
-      "index": 0,
       "title": "UAH QuietRoom",
       "dates": "May 2023 - July 2023",
       "url": "https://quietroom.app",
@@ -14,7 +13,6 @@
       ]
   },
   {
-      "index": 1,
       "title": "Unscene",
       "dates": "Aug 2022 - Dec 2022",
       "url": "",
@@ -26,7 +24,6 @@
       ]
   },
   {
-      "index": 2,
       "title": "Adventure to the Sun",
       "dates": "Oct 2022",
       "url": "",
@@ -39,7 +36,6 @@
       ]
   },
   {
-      "index": 3,
       "title": "Pomodoro Widget",
       "dates": "May 2022 - Jun 2022",
       "url": "https://salwajeries.com/pomodoro-notion/",
@@ -52,7 +48,6 @@
       ]
   },
   {
-      "index": 4,
       "title": "SafeStay",
       "dates": "Mar 2022",
       "url": "",
@@ -64,7 +59,6 @@
       ]
   },
   {
-      "index": 5,
       "title": "Notion Clock Widget",
       "dates": "Jan 2022",
       "url": "https://salwajeries.com/clockwidget-notion",
