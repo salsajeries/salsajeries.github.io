@@ -32,16 +32,15 @@ const TieFighter: React.FC = () => {
       onCreated={({ camera }) => {
         cameraRef.current = camera as THREE.PerspectiveCamera;
       }}
-      className="h-full w-full"
     >
       {/* Increase the intensity of the ambient light */}
-      <ambientLight intensity={1} />
+      <ambientLight intensity={2} />
 
       {/* Increase the intensity of the point light */}
       <pointLight position={[10, 10, 10]} intensity={2} />
 
       <TieFighterModel />
-      <OrbitControls enableZoom={false} enablePan={false} />
+      <OrbitControls enablePan={false} enableZoom={false} />
     </Canvas>
   );
 };

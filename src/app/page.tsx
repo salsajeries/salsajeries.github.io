@@ -39,7 +39,7 @@ export default function Home() {
     const maxScroll = 1100; // Maximum scroll value at which position stops changing
     horizontalPositionVW = Math.max(
       0,
-      initialXPositionVW - (scrollPosition / maxScroll) * initialXPositionVW
+      initialXPositionVW + 5 - (scrollPosition / maxScroll) * initialXPositionVW
     );
   } else {
     // FOR MOBILE
@@ -57,7 +57,12 @@ export default function Home() {
         className="fixed flex h-[100vh] items-center justify-center"
       >
         <div className="flex flex-col items-center justify-center w-[40vw]">
-          <TieFighter />
+          <div
+            className="hover:scale-125 active:scale-75"
+            style={{ transition: "transform 0.18s ease-out" }}
+          >
+            <TieFighter />
+          </div>
           <TypewriterTitle title="hi, i'm salwa" size="6vw" />
           <div
             style={{
