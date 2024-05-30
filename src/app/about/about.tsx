@@ -17,7 +17,7 @@ export default function About() {
         title={"about me"}
         size={`${isDesktop ? "4em" : "2.5em"}`}
       />
-      <p className="sm:text-justify sm:text-xl">
+      <p className={`text-xl ${isDesktop ? "text-justify" : "text-center"}`}>
         My name is Salwa Jeries, I&apos;m a senior at The University of Alabama
         in Huntsville majoring in computer science with a math minor. I&apos;m
         interested in software engineering and particularly web and app

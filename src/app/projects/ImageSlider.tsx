@@ -31,8 +31,9 @@ import PW4 from "@/app/assets/images/PomodoroWidget/PW4.png";
 import NCW1 from "@/app/assets/images/NotionClockWidget/NCW1.png";
 import NCW2 from "@/app/assets/images/NotionClockWidget/NCW2.png";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
-export default function ImageSlider(props: { project: number }) {
+export default function ImageSlider(props: { project: number; url?: string }) {
   const imageSets = [
     [QR1, QR2, QR3],
     [U1, U2, U3, U4],
@@ -41,7 +42,7 @@ export default function ImageSlider(props: { project: number }) {
     [],
     [NCW1, NCW2],
   ];
-  const { project } = props;
+  const { project, url } = props;
   const [imageIndex, setImageIndex] = useState(project);
 
   return (
@@ -62,7 +63,13 @@ export default function ImageSlider(props: { project: number }) {
           <CarouselContent>
             {imageSets[imageIndex].map((image: any, i: number) => (
               <CarouselItem key={i}>
-                <Image src={image} alt={""} width={200} height={200} />
+                {url ? (
+                  <Link href={url}>
+                    <Image src={image} alt={""} width={200} height={200} />
+                  </Link>
+                ) : (
+                  <Image src={image} alt={""} width={200} height={200} />
+                )}
               </CarouselItem>
             ))}
           </CarouselContent>

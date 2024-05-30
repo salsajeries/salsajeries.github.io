@@ -13,7 +13,7 @@ export default function Home() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
 
   const [scrollPosition, setScrollPosition] = useState(0);
-  const initialXPositionVW = 30; // Initial horizontal position in viewport width units (vw)
+  const initialXPositionVW = 25; // Initial horizontal position in viewport width units (vw)
   const maxScroll = 1000; // Maximum scroll value at which position stops changing
   const maxOffsetVW = 150; // The horizontal offset (in vw) needed to move the element completely off the screen
 
@@ -36,7 +36,7 @@ export default function Home() {
   if (isDesktop) {
     // FOR DESKTOP
     // Calculate the horizontal position of the div in vw units
-    const maxScroll = 1100; // Maximum scroll value at which position stops changing
+    const maxScroll = 950; // Maximum scroll value at which position stops changing
     horizontalPositionVW = Math.max(
       0,
       initialXPositionVW - (scrollPosition / maxScroll) * initialXPositionVW
@@ -56,7 +56,7 @@ export default function Home() {
         style={{ transform: `translateX(calc(${horizontalPositionVW}vw))` }}
         className="fixed flex h-[100vh] items-center justify-center"
       >
-        <div className="flex flex-col items-center justify-center w-[40vw]">
+        <div className="flex flex-col items-center justify-center w-[40vw] ml-10">
           <div>
             <TieFighter />
           </div>
