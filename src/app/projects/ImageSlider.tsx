@@ -48,39 +48,47 @@ export default function ImageSlider(props: { project: number; url?: string }) {
   return (
     <div>
       {imageSets[imageIndex].length !== 0 ? (
-        <Carousel
-          className="flex items-center"
-          opts={{
-            align: "center",
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 8000,
-            }),
-          ]}
-        >
-          <CarouselContent>
-            {imageSets[imageIndex].map((image: any, i: number) => (
-              <CarouselItem key={i}>
-                {url ? (
-                  <Link href={url}>
-                    <Image src={image} alt={""} width={200} height={200} />
-                  </Link>
-                ) : (
-                  <Image
-                    src={image}
-                    alt={""}
-                    width={undefined}
-                    height={undefined}
-                  />
-                )}
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <div className="pl-10 pr-10">
+          <Carousel
+            className="flex items-center"
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 7000,
+              }),
+            ]}
+          >
+            <CarouselContent>
+              {imageSets[imageIndex].map((image: any, i: number) => (
+                <CarouselItem
+                  key={i}
+                  className="flex justify-center items-center"
+                >
+                  {url ? (
+                    <Link passHref href={url}>
+                      <Image
+                        src={image}
+                        alt={""}
+                        className="h-full w-auto rounded-3xl hover:scale-105 active:scale-95 transition ease-in-out duration-180"
+                      />
+                    </Link>
+                  ) : (
+                    <Image
+                      src={image}
+                      alt={""}
+                      className="h-full w-auto rounded-3xl hover:scale-105 active:scale-95 transition ease-in-out duration-180"
+                    />
+                  )}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
       ) : (
         <></>
       )}
