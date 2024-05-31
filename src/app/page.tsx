@@ -57,7 +57,7 @@ export default function Home() {
         className="fixed flex h-[100vh] items-center justify-center"
       >
         <div className="flex flex-col items-center justify-center w-[40vw] ml-10">
-          <div>
+          <div className="w-auto h-auto">
             <TieFighter />
           </div>
           <TypewriterTitle title="hi, i'm salwa" size="6vw" />

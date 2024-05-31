@@ -69,14 +69,14 @@ export default function Projects() {
                   ))}
                 </ul>
                 <div className="p-3">
-                  <Link href={p.github} className="p-1">
+                  <Link passHref href={p.github} className="p-1">
                     <Badge variant="default">
                       <GitHubIcon className="pr-1" />
                       Github
                     </Badge>
                   </Link>
                   {p.url ? (
-                    <Link href={p.url} className="p-1">
+                    <Link passHref href={p.url} className="p-1">
                       <Badge variant="default">
                         <LanguageRoundedIcon className="pr-1" />
                         Website

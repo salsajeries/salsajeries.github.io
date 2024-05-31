@@ -68,7 +68,12 @@ export default function ImageSlider(props: { project: number; url?: string }) {
                     <Image src={image} alt={""} width={200} height={200} />
                   </Link>
                 ) : (
-                  <Image src={image} alt={""} width={200} height={200} />
+                  <Image
+                    src={image}
+                    alt={""}
+                    width={undefined}
+                    height={undefined}
+                  />
                 )}
               </CarouselItem>
             ))}
