@@ -72,14 +72,14 @@ export default function ImageSlider(props: { project: number; url?: string }) {
                       <Image
                         src={image}
                         alt={""}
-                        className="h-full w-auto rounded-3xl hover:scale-105 active:scale-95 transition ease-in-out duration-180"
+                        className="h-full rounded-3xl hover:scale-105 active:scale-95 transition ease-in-out duration-180"
                       />
                     </Link>
                   ) : (
                     <Image
                       src={image}
                       alt={""}
-                      className="h-full w-auto rounded-3xl hover:scale-105 active:scale-95 transition ease-in-out duration-180"
+                      className="h-full rounded-3xl hover:scale-105 active:scale-95 transition ease-in-out duration-180"
                     />
                   )}
                 </CarouselItem>
