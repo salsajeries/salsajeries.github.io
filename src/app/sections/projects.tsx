@@ -12,8 +12,8 @@ import {
 import Data from "../data/project_data.json";
 import TypewriterTitle from "@/components/TypewriterTitle";
 import useMediaQuery from "../hooks/use-media-query";
-import ImageSlider from "./ImageSlider";
-import { Badge, badgeVariants } from "@/components/ui/badge";
+import ImageSlider from "../../components/ImageSlider";
+import { Badge } from "@/components/ui/badge";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
 import Link from "next/link";
@@ -23,9 +23,9 @@ export default function Projects() {
 
   return (
     <div
-      className={`flex flex-col ${
-        isDesktop ? "w-[50vw] items-end" : "w-[100vw] items-center"
-      } p-10 justify-center`}
+      className={`flex flex-col p-10 justify-center 
+      ${isDesktop ? "w-[50vw] items-end" : "w-[100vw] items-center"}`}
+      id="projects"
     >
       <TypewriterTitle
         title={"projects"}
@@ -36,7 +36,7 @@ export default function Projects() {
           <DialogTrigger
             className={`mb-5 mt-5 uppercase ${
               isDesktop
-                ? "hover:-translate-x-5 transition ease-in-out duration-180"
+                ? "hover:opacity-80 hover:-translate-x-5 transition ease-in-out duration-180"
                 : ""
             }`}
             style={{

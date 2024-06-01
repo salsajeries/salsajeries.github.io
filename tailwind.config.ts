@@ -55,6 +55,7 @@ const config = {
         "custom-background": "#152025",
         "custom-text": "#EAE0D5",
         "card-bg": "#C6AC8F",
+        "custom-dark-background": "#0C1214",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -30,7 +30,7 @@ import PW4 from "@/app/assets/images/PomodoroWidget/PW4.png";
 
 import NCW1 from "@/app/assets/images/NotionClockWidget/NCW1.png";
 import NCW2 from "@/app/assets/images/NotionClockWidget/NCW2.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function ImageSlider(props: { project: number; url?: string }) {
