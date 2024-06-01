@@ -169,14 +169,21 @@ export default function Home() {
               blog
             </Link>
             <div className="flex p-2">
-              <GitHubIcon
-                fontSize="large"
-                className="m-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
-              />
-              <LinkedInIcon
-                fontSize="large"
-                className="m-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
-              />
+              <Link href={"https://github.com/salsajeries"} passHref>
+                <GitHubIcon
+                  fontSize="large"
+                  className="m-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+                />
+              </Link>
+              <Link
+                href={"https://www.linkedin.com/in/salwa-jeries-17a146226/"}
+                passHref
+              >
+                <LinkedInIcon
+                  fontSize="large"
+                  className="m-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+                />
+              </Link>
             </div>
           </div>
         </div>
