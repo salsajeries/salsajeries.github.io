@@ -10,6 +10,13 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 
+import CS1 from "@/app/assets/images/ChargerSync/CS1.png";
+import CS2 from "@/app/assets/images/ChargerSync/CS2.png";
+import CS3 from "@/app/assets/images/ChargerSync/CS3.png";
+import CS4 from "@/app/assets/images/ChargerSync/CS4.png";
+import CS5 from "@/app/assets/images/ChargerSync/CS5.png";
+import CS6 from "@/app/assets/images/ChargerSync/CS6.png";
+
 import QR1 from "@/app/assets/images/QuietRoom/QR1.png";
 import QR2 from "@/app/assets/images/QuietRoom/QR2.png";
 import QR3 from "@/app/assets/images/QuietRoom/QR3.png";
@@ -35,6 +42,7 @@ import Link from "next/link";
 
 export default function ImageSlider(props: { project: number; url?: string }) {
   const imageSets = [
+    [CS1, CS2, CS3, CS4, CS5, CS6],
     [QR1, QR2, QR3],
     [U1, U2, U3, U4],
     [ATTS1, ATTS2, ATTS3],
