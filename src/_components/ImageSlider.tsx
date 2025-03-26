@@ -6,37 +6,37 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/_components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 
-import CS1 from "@/app/assets/images/ChargerSync/CS1.png";
-import CS2 from "@/app/assets/images/ChargerSync/CS2.png";
-import CS3 from "@/app/assets/images/ChargerSync/CS3.png";
-import CS4 from "@/app/assets/images/ChargerSync/CS4.png";
-import CS5 from "@/app/assets/images/ChargerSync/CS5.png";
-import CS6 from "@/app/assets/images/ChargerSync/CS6.png";
+import CS1 from "@/app/_assets/images/ChargerSync/CS1.png";
+import CS2 from "@/app/_assets/images/ChargerSync/CS2.png";
+import CS3 from "@/app/_assets/images/ChargerSync/CS3.png";
+import CS4 from "@/app/_assets/images/ChargerSync/CS4.png";
+import CS5 from "@/app/_assets/images/ChargerSync/CS5.png";
+import CS6 from "@/app/_assets/images/ChargerSync/CS6.png";
 
-import QR1 from "@/app/assets/images/QuietRoom/QR1.png";
-import QR2 from "@/app/assets/images/QuietRoom/QR2.png";
-import QR3 from "@/app/assets/images/QuietRoom/QR3.png";
+import QR1 from "@/app/_assets/images/QuietRoom/QR1.png";
+import QR2 from "@/app/_assets/images/QuietRoom/QR2.png";
+import QR3 from "@/app/_assets/images/QuietRoom/QR3.png";
 
-import U1 from "@/app/assets/images/Unscene/U1.png";
-import U2 from "@/app/assets/images/Unscene/U2.png";
-import U3 from "@/app/assets/images/Unscene/U3.png";
-import U4 from "@/app/assets/images/Unscene/U4.png";
+import U1 from "@/app/_assets/images/Unscene/U1.png";
+import U2 from "@/app/_assets/images/Unscene/U2.png";
+import U3 from "@/app/_assets/images/Unscene/U3.png";
+import U4 from "@/app/_assets/images/Unscene/U4.png";
 
-import ATTS1 from "@/app/assets/images/AdventureToTheSun/ATTS1.png";
-import ATTS2 from "@/app/assets/images/AdventureToTheSun/ATTS2.png";
-import ATTS3 from "@/app/assets/images/AdventureToTheSun/ATTS3.png";
+import ATTS1 from "@/app/_assets/images/AdventureToTheSun/ATTS1.png";
+import ATTS2 from "@/app/_assets/images/AdventureToTheSun/ATTS2.png";
+import ATTS3 from "@/app/_assets/images/AdventureToTheSun/ATTS3.png";
 
-import PW1 from "@/app/assets/images/PomodoroWidget/PW1.png";
-import PW2 from "@/app/assets/images/PomodoroWidget/PW2.png";
-import PW3 from "@/app/assets/images/PomodoroWidget/PW3.png";
-import PW4 from "@/app/assets/images/PomodoroWidget/PW4.png";
+import PW1 from "@/app/_assets/images/PomodoroWidget/PW1.png";
+import PW2 from "@/app/_assets/images/PomodoroWidget/PW2.png";
+import PW3 from "@/app/_assets/images/PomodoroWidget/PW3.png";
+import PW4 from "@/app/_assets/images/PomodoroWidget/PW4.png";
 
-import NCW1 from "@/app/assets/images/NotionClockWidget/NCW1.png";
-import NCW2 from "@/app/assets/images/NotionClockWidget/NCW2.png";
+import NCW1 from "@/app/_assets/images/NotionClockWidget/NCW1.png";
+import NCW2 from "@/app/_assets/images/NotionClockWidget/NCW2.png";
 import { useState } from "react";
 import Link from "next/link";
 

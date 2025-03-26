@@ -82,6 +82,7 @@ body {
   font-family: 'Varela Round', sans-serif;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
+  @apply h-full;
   }
   
   section {

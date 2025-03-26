@@ -1,24 +1,24 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import TypewriterTitle from "../components/TypewriterTitle";
+import TypewriterTitle from "../_components/TypewriterTitle";
 import Typewriter from "typewriter-effect";
 import "./globals.css";
-import About from "./sections/about";
-import Projects from "./sections/projects";
-import useMediaQuery from "./hooks/use-media-query";
-import TieFighter from "@/components/TieFighter";
+import About from "./_sections/about";
+import Projects from "./_sections/projects";
+import useMediaQuery from "./_hooks/use-media-query";
+import TieFighter from "@/_components/TieFighter";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import Blog from "./sections/blog";
-import { Separator } from "@/components/ui/separator";
+import Blog from "./_sections/blog";
+import { Separator } from "@/_components/ui/separator";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/_components/ui/tooltip";
 
 export default function Home() {
   const isDesktop = useMediaQuery("(min-width: 786px)");

@@ -1,8 +1,8 @@
 import Link from "next/link";
-import TypewriterTitle from "../../components/TypewriterTitle";
+import TypewriterTitle from "../../_components/TypewriterTitle";
 import "../globals.css";
-import useMediaQuery from "../hooks/use-media-query";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import useMediaQuery from "../_hooks/use-media-query";
+import { Alert, AlertDescription, AlertTitle } from "@/_components/ui/alert";
 
 export default function Blog() {
   const isDesktop = useMediaQuery("(min-width: 786px)");

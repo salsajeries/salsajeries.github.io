@@ -8,12 +8,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import Data from "../data/project_data.json";
-import TypewriterTitle from "@/components/TypewriterTitle";
-import useMediaQuery from "../hooks/use-media-query";
-import ImageSlider from "../../components/ImageSlider";
-import { Badge } from "@/components/ui/badge";
+} from "@/_components/ui/dialog";
+import Data from "../_data/project_data.json";
+import TypewriterTitle from "@/_components/TypewriterTitle";
+import useMediaQuery from "../_hooks/use-media-query";
+import ImageSlider from "../../_components/ImageSlider";
+import { Badge } from "@/_components/ui/badge";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
 import Link from "next/link";

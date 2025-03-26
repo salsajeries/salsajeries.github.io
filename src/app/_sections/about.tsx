@@ -1,9 +1,9 @@
-import TypewriterTitle from "../../components/TypewriterTitle";
+import TypewriterTitle from "../../_components/TypewriterTitle";
 import "../globals.css";
-import useMediaQuery from "../hooks/use-media-query";
+import useMediaQuery from "../_hooks/use-media-query";
 import Image from "next/image";
 import ProfileImage from "../assets/images/Misc/myself.jpeg";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/_components/ui/avatar";
 
 export default function About() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
