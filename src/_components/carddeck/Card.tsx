@@ -13,6 +13,7 @@ interface CardProps {
   x: number;
   canDrag: boolean;
   onDragEnd: () => void;
+  onDragStart: () => void;
 }
 
 export default function Card({
@@ -25,6 +26,7 @@ export default function Card({
   x,
   canDrag,
   onDragEnd,
+  onDragStart,
 }: CardProps) {
   const router = useRouter();
   const [isDragging, setIsDragging] = useState(false);
@@ -45,6 +47,7 @@ export default function Card({
       onDragStart={(e) => {
         setIsDragging(true);
         e.stopPropagation();
+        onDragStart();
       }}
       onDragEnd={(e, info) => {
         if (Math.abs(info.offset.x) > 0 || Math.abs(info.offset.y) > 0) {

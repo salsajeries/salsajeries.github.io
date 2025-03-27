@@ -2,7 +2,7 @@
 
 import Card from "./Card";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 // @ts-ignore
 import move from "lodash-move";
 import {
@@ -21,18 +21,37 @@ const CARD_OFFSET = 10;
 const SCALE_FACTOR = 0.08;
 const ROTATION_FACTOR = 8; // Controls how much each card rotates outward
 const X_OFFSET = 40; // Controls left/right shift for curved stacking
+const AUTO_ITERATE_INTERVAL = 3000; // Change card every 3 seconds
 
 export default function CardStack() {
-  const [cards, setCards] = React.useState(CARD_DATA);
+  const [cards, setCards] = useState(CARD_DATA);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
+
+  // Move card to end of stack when dragging
   const moveToEnd = (from: number) => {
     setCards(move(cards, from, cards.length - 1));
   };
+
+  // Auto-iteration
+  useEffect(() => {
+    if (isUserInteracting) return; // Pause auto-iteration when user interacts
+
+    const interval = setInterval(() => {
+      moveToEnd(0); // Move the first card to the back
+    }, AUTO_ITERATE_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [isUserInteracting, cards]); // Restart interval if interaction stops
 
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>
-          <div style={CardDeckStyles.wrapperStyle}>
+          <div
+            style={CardDeckStyles.wrapperStyle}
+            onMouseEnter={() => setIsUserInteracting(true)}
+            onMouseLeave={() => setIsUserInteracting(false)}
+          >
             <ul style={CardDeckStyles.cardWrapStyle}>
               {cards.map((card, index) => {
                 const canDrag = index === 0;
@@ -46,7 +65,11 @@ export default function CardStack() {
                     top={index * -CARD_OFFSET}
                     zIndex={CARD_DATA.length - index}
                     canDrag={canDrag}
-                    onDragEnd={() => moveToEnd(index)}
+                    onDragStart={() => setIsUserInteracting(true)}
+                    onDragEnd={() => {
+                      moveToEnd(index);
+                      setIsUserInteracting(false);
+                    }}
                     rotate={
                       isLeftStack
                         ? -ROTATION_FACTOR * index
