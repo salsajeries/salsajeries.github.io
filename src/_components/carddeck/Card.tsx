@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface CardProps {
   imageSrc: string;
+  href: string;
   scale: number;
   top: number;
   zIndex: number;
@@ -10,13 +13,25 @@ interface CardProps {
   x: number;
   canDrag: boolean;
   onDragEnd: () => void;
-  onClick: () => void;
 }
 
-export default function Card({ imageSrc, scale, top, zIndex, rotate, x, canDrag, onDragEnd, onClick }: CardProps) {
+export default function Card({
+  imageSrc,
+  href,
+  scale,
+  top,
+  zIndex,
+  rotate,
+  x,
+  canDrag,
+  onDragEnd,
+}: CardProps) {
+  const router = useRouter();
+  const [isDragging, setIsDragging] = useState(false);
+
   return (
     <motion.li
-      className="absolute w-[400px] h-[600px] rounded-lg shadow-lg overflow-hidden"
+      className="absolute w-[200px] h-[300px] rounded-lg shadow-lg overflow-hidden"
       style={{
         top,
         zIndex,
@@ -27,16 +42,28 @@ export default function Card({ imageSrc, scale, top, zIndex, rotate, x, canDrag,
       drag={canDrag ? "y" : false}
       dragConstraints={{ top: 0, bottom: 0 }}
       dragListener={true}
-      onDragEnd={onDragEnd}
-      onClick={onClick} // Click to bring to front
+      onDragStart={(e) => {
+        setIsDragging(true);
+        e.stopPropagation();
+      }}
+      onDragEnd={(e, info) => {
+        if (Math.abs(info.offset.x) > 0 || Math.abs(info.offset.y) > 0) {
+          e.stopPropagation(); // Prevents click from firing if dragged
+        } 
+        setIsDragging(false);
+        onDragEnd();
+      }}
+      onClick={() => {
+        if (!isDragging) router.push(href);
+      }}
     >
       <div className="w-full h-full">
-        <Image 
-          src={imageSrc} 
-          alt="Card Image" 
-          layout="fill" 
-          objectFit="cover" 
-          draggable={false} 
+        <Image
+          src={imageSrc}
+          alt="Card Image"
+          layout="fill"
+          objectFit="cover"
+          draggable={false}
         />
       </div>
     </motion.li>

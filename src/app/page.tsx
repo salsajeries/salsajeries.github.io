@@ -19,6 +19,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/_components/ui/tooltip";
+import Travel from "./_sections/travel";
 
 export default function Home() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
@@ -163,6 +164,12 @@ export default function Home() {
               projects
             </Link>
             <Link
+              href={"#travel"}
+              className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+            >
+              travel
+            </Link>
+            <Link
               href={"#blog"}
               className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
             >
@@ -200,6 +207,12 @@ export default function Home() {
         id="projects"
       >
         <Projects />
+      </section>
+      <section
+        className="h-[100vh] flex items-center justify-end p-10"
+        id="travel"
+      >
+        <Travel />
       </section>
       <section
         className="h-[100vh] flex items-center justify-end p-10"
