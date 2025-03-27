@@ -39,6 +39,12 @@ export default function Home() {
     "Right-click to shoot!",
   ];
 
+  // Smooth scroll to section
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Horizontal scroll calc function
   const updateHorizontalPosition = () => {
     const position = window.scrollY;
     setScrollPosition(position);
@@ -65,6 +71,7 @@ export default function Home() {
     }
   }, []);
 
+  // Horizontal scroll listener
   useEffect(() => {
     // Set initial scroll position
     updateHorizontalPosition();
@@ -128,10 +135,9 @@ export default function Home() {
               delay: 0,
               ease: [0, 0.71, 0.2, 1.01],
             }}
+            className="flex flex-col items-center"
           >
-            <Link href={"#home"} passHref>
-              <TypewriterTitle title="hi, i'm salwa" size="6vw" />
-            </Link>
+            <TypewriterTitle title="hi, i'm salwa" size="6vw" />
             <div
               style={{
                 fontSize: `${isDesktop ? "2vw" : "1em"}`,
@@ -161,30 +167,30 @@ export default function Home() {
               }}
               className="flex flex-col items-center"
             >
-              <Link
-                href={"#about"}
+              <div
+                onClick={() => scrollToSection("about")}
                 className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
               >
                 about
-              </Link>
-              <Link
-                href={"#projects"}
+              </div>
+              <div
+                onClick={() => scrollToSection("projects")}
                 className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
               >
                 projects
-              </Link>
-              <Link
-                href={"#travel"}
+              </div>
+              <div
+                onClick={() => scrollToSection("travel")}
                 className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
               >
                 travel
-              </Link>
-              <Link
-                href={"#blog"}
+              </div>
+              <div
+                onClick={() => scrollToSection("blogs")}
                 className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
               >
                 blog
-              </Link>
+              </div>
               <div className="flex p-2">
                 <Link href={"https://github.com/salsajeries"} passHref>
                   <GitHubIcon
@@ -227,39 +233,42 @@ export default function Home() {
       </section>
       <section
         className="h-[100vh] flex items-center justify-end p-10"
-        id="blog"
+        id="blogs"
       >
         <Blog />
       </section>
       <section className="relative z-10 bg-custom-dark-background text-card-bg">
         <div className="flex flex-col h-[100vh] p-10 z-10 justify-center items-center text-xl">
-          <p>Made with Next.js, Tailwind CSS, and shadcn/ui</p>
+          <p className="text-center">
+            Made with Next.js, Tailwind CSS, and shadcn/ui
+          </p>
           <Separator className="w-[10%]" />
           <p>WebGL Model:</p>
-          <div className="mt-2 flex justify-center">
+          <div className="mt-2 flex flex-wrap justify-center">
             <Link
               href={"https://poly.pizza/m/fGumBDR4AFk"}
               className="underline underline-offset-2"
             >
               Tie Fighter
-            </Link>{" "}
-            by{" "}
+            </Link>
+            <span className="mx-1"> by </span>
             <Link
               href={"https://poly.pizza/u/David%20O'Brien%20(-BlanK-)"}
               className="underline underline-offset-2"
             >
               David O&apos;Brien (-BlanK-)
-            </Link>{" "}
+            </Link>
+            <span className="mx-1"> </span>
             <Link
               href={"https://creativecommons.org/licenses/by/3.0/"}
               className="underline underline-offset-2"
             >
               [CC-BY]
-            </Link>{" "}
-            via Poly Pizza
+            </Link>
+            <span className="mx-1"> via Poly Pizza</span>
           </div>
           <Separator className="w-[10%]" />
-          <p>Copyright © 2024 Salwa Jeries</p>
+          <p>Copyright © 2025 Salwa Jeries</p>
         </div>
       </section>
     </div>
