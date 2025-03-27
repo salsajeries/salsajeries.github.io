@@ -137,7 +137,12 @@ export default function Home() {
             }}
             className="flex flex-col items-center"
           >
-            <TypewriterTitle title="hi, i'm salwa" size="6vw" />
+            <div
+              onClick={() => scrollToSection("empty-home")}
+              className="cursor-pointer"
+            >
+              <TypewriterTitle title="hi, i'm salwa" size="6vw" />
+            </div>
             <div
               style={{
                 fontSize: `${isDesktop ? "2vw" : "1em"}`,
@@ -169,25 +174,25 @@ export default function Home() {
             >
               <div
                 onClick={() => scrollToSection("about")}
-                className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+                className="cursor-pointer p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
               >
                 about
               </div>
               <div
                 onClick={() => scrollToSection("projects")}
-                className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+                className="cursor-pointer p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
               >
                 projects
               </div>
               <div
                 onClick={() => scrollToSection("travel")}
-                className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+                className="cursor-pointer p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
               >
                 travel
               </div>
               <div
                 onClick={() => scrollToSection("blogs")}
-                className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+                className="cursor-pointer p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
               >
                 blog
               </div>
