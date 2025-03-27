@@ -2,11 +2,14 @@ import Link from "next/link";
 import TypewriterTitle from "../../_components/TypewriterTitle";
 import "../globals.css";
 import useMediaQuery from "../_hooks/use-media-query";
-import { Alert, AlertDescription, AlertTitle } from "@/_components/ui/alert";
 import CardStack from "@/_components/carddeck/CardStack";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Travel() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div
@@ -27,19 +30,26 @@ export default function Travel() {
         foods, and learning about new cultures. Checkout some of the places
         I&apos;ve been and read about my experiences!
       </p>
-      <div className="flex flex-col items-center">
-        <CardStack />
-        <Link
-          href={"/travel"}
-          className="p-2 underline underline-offset-4 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
-        >
-          View all cities!
-        </Link>
-      </div>
-      {/* <Alert className="mb-5 mt-5 w-3/4">
-        <AlertTitle>COMING SOON</AlertTitle>
-        <AlertDescription>Stay tuned for upcoming blog posts!</AlertDescription>
-      </Alert> */}
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{
+          duration: 0.8,
+          delay: 0.1,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <div className="flex flex-col items-center">
+          <CardStack />
+          <Link
+            href={"/travel"}
+            className="p-2 underline underline-offset-4 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+          >
+            View all cities!
+          </Link>
+        </div>
+      </motion.div>
     </div>
   );
 }

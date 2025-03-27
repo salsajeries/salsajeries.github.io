@@ -20,6 +20,7 @@ import {
   TooltipTrigger,
 } from "@/_components/ui/tooltip";
 import Travel from "./_sections/travel";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
@@ -119,80 +120,90 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
           </div>
-          <Link href={"#home"} passHref>
-            <TypewriterTitle title="hi, i'm salwa" size="6vw" />
-          </Link>
-          <div
-            style={{
-              fontSize: `${isDesktop ? "2vw" : "1em"}`,
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0,
+              ease: [0, 0.71, 0.2, 1.01],
             }}
-            className="pb-2"
           >
-            <Typewriter
-              options={{
-                delay: 50,
-                loop: true,
+            <Link href={"#home"} passHref>
+              <TypewriterTitle title="hi, i'm salwa" size="6vw" />
+            </Link>
+            <div
+              style={{
+                fontSize: `${isDesktop ? "2vw" : "1em"}`,
               }}
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("here's my little space on the internet.")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .typeString("scroll for more!")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .start();
+              className="pb-2"
+            >
+              <Typewriter
+                options={{
+                  delay: 50,
+                  loop: true,
+                }}
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString("here's my little space on the internet.")
+                    .pauseFor(2000)
+                    .deleteAll()
+                    .typeString("scroll for more!")
+                    .pauseFor(2000)
+                    .deleteAll()
+                    .start();
+                }}
+              />
+            </div>
+            <div
+              style={{
+                fontSize: `${isDesktop ? "1.5vw" : "1em"}`,
               }}
-            />
-          </div>
-          <div
-            style={{
-              fontSize: `${isDesktop ? "1.5vw" : "1em"}`,
-            }}
-            className="flex flex-col items-center"
-          >
-            <Link
-              href={"#about"}
-              className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+              className="flex flex-col items-center"
             >
-              about
-            </Link>
-            <Link
-              href={"#projects"}
-              className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
-            >
-              projects
-            </Link>
-            <Link
-              href={"#travel"}
-              className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
-            >
-              travel
-            </Link>
-            <Link
-              href={"#blog"}
-              className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
-            >
-              blog
-            </Link>
-            <div className="flex p-2">
-              <Link href={"https://github.com/salsajeries"} passHref>
-                <GitHubIcon
-                  fontSize="large"
-                  className="m-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
-                />
+              <Link
+                href={"#about"}
+                className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+              >
+                about
               </Link>
               <Link
-                href={"https://www.linkedin.com/in/salwa-jeries-17a146226/"}
-                passHref
+                href={"#projects"}
+                className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
               >
-                <LinkedInIcon
-                  fontSize="large"
-                  className="m-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
-                />
+                projects
               </Link>
+              <Link
+                href={"#travel"}
+                className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+              >
+                travel
+              </Link>
+              <Link
+                href={"#blog"}
+                className="p-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+              >
+                blog
+              </Link>
+              <div className="flex p-2">
+                <Link href={"https://github.com/salsajeries"} passHref>
+                  <GitHubIcon
+                    fontSize="large"
+                    className="m-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+                  />
+                </Link>
+                <Link
+                  href={"https://www.linkedin.com/in/salwa-jeries-17a146226/"}
+                  passHref
+                >
+                  <LinkedInIcon
+                    fontSize="large"
+                    className="m-2 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"
+                  />
+                </Link>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <section className="h-[100vh]" id="empty-home"></section>
