@@ -4,13 +4,17 @@ import React, { useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
-const TieFighterModel = () => {
+interface TieFighterModelProps {
+  isSpinning: boolean;
+}
+
+const TieFighterModel: React.FC<TieFighterModelProps> = ({ isSpinning }) => {
   const { scene } = useGLTF("/TieFighter.glb");
   const modelRef = useRef();
 
-  //Use useFrame to rotate the model
+  // Use useFrame to rotate the model
   useFrame(() => {
-    if (modelRef.current) {
+    if (modelRef.current && isSpinning) {
       modelRef.current.rotation.y += 0.005; // Adjust the speed of rotation here
     }
   });
@@ -18,7 +22,7 @@ const TieFighterModel = () => {
   return <primitive ref={modelRef} object={scene} scale={[0.5, 0.5, 0.5]} />;
 };
 
-const TieFighter = () => {
+const TieFighter = ({ isSpinning }: { isSpinning: boolean }) => {
   const cameraRef = useRef();
 
   return (
@@ -29,7 +33,7 @@ const TieFighter = () => {
     >
       <ambientLight intensity={2} />
       <pointLight position={[10, 10, 10]} />
-      <TieFighterModel />
+      <TieFighterModel isSpinning={isSpinning} />
       <OrbitControls
         enableZoom={false}
         enablePan={false}

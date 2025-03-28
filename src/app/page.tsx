@@ -119,7 +119,7 @@ export default function Home() {
                   onMouseOver={pickNextString}
                   onContextMenu={playAudio}
                 >
-                  <TieFighter />
+                  <TieFighter isSpinning={true} />
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{strings[selectedString]}</p>
@@ -218,29 +218,74 @@ export default function Home() {
         </div>
       </div>
       <section className="h-[100vh]" id="empty-home"></section>
+
       <section
         className="h-[100vh] flex items-center justify-end p-10"
         id="about"
       >
-        <About />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="flex flex-col items-center"
+        >
+          <About />
+        </motion.div>
       </section>
       <section
         className="h-[100vh] flex items-center justify-end p-10"
         id="projects"
       >
-        <Projects />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="flex flex-col items-center"
+        >
+          <Projects />
+        </motion.div>
       </section>
       <section
         className="h-[100vh] flex items-center justify-end p-10"
         id="travel"
       >
-        <Travel />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="flex flex-col items-center"
+        >
+          <Travel />
+        </motion.div>
       </section>
       <section
         className="h-[100vh] flex items-center justify-end p-10"
         id="blogs"
       >
-        <Blog />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="flex flex-col items-center"
+        >
+          <Blog />
+        </motion.div>
       </section>
       <section className="relative z-10 bg-custom-dark-background text-card-bg">
         <div className="flex flex-col h-[100vh] p-10 z-10 justify-center items-center text-xl">

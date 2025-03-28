@@ -7,11 +7,11 @@ import TieFighter from "./TieFighter";
 export default function Header() {
   return (
     <div className="flex flex-direction-row justify-items-start items-center">
-      <div className="w-20 h-20">
-        <TieFighter />
+      <div className="w-14 h-14">
+        <TieFighter isSpinning={false} />
       </div>
       <Link href={"/"} passHref>
-        <TypewriterTitle title="hi, i'm salwa" size="2.5vw" />
+        <TypewriterTitle title="hi, i'm salwa" size="1.5vw" />
       </Link>
     </div>
   );
