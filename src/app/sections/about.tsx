@@ -1,8 +1,6 @@
 import TypewriterTitle from "../../_components/TypewriterTitle";
 import "../globals.css";
 import useMediaQuery from "../_hooks/use-media-query";
-import Image from "next/image";
-import ProfileImage from "/myself.jpeg";
 import { Avatar, AvatarFallback, AvatarImage } from "@/_components/ui/avatar";
 
 export default function About() {

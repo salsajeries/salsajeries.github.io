@@ -10,7 +10,7 @@ export default function PagesLayout({
   return (
     <div className="m-5 flex flex-col min-h-screen">
       <Header />
-      <div className="bg-custom-background text-custom-text flex-1">{children}</div>
+      <div className="bg-custom-background text-custom-text flex-1 flex justify-center">{children}</div>
       <Footer />
     </div>
   );
