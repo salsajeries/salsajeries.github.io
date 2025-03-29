@@ -4,6 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true, // Disables Next.js image optimization for static exports
+    domains: ["firebasestorage.googleapis.com"],  // image host
   },
 };
 

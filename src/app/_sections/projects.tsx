@@ -9,17 +9,24 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/_components/ui/dialog";
-import Data from "../_data/project_data.json";
+//import Data from "../_data/project_data.json";
 import TypewriterTitle from "@/_components/TypewriterTitle";
-import useMediaQuery from "../_hooks/use-media-query";
+import useMediaQuery from "../_hooks/useMediaQuery";
 import ImageSlider from "../../_components/ImageSlider";
 import { Badge } from "@/_components/ui/badge";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
 import Link from "next/link";
+import useGetProjects from "../_hooks/useGetProjects";
+import { Project } from "@/types";
+import { useEffect } from "react";
 
 export default function Projects() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
+  const { projects, loading, error } = useGetProjects();
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div
@@ -31,7 +38,7 @@ export default function Projects() {
         title={"projects"}
         size={`${isDesktop ? "4em" : "2.5em"}`}
       />
-      {Data.map((p: any, index: number) => (
+      {projects.map((p: Project, index: number) => (
         <Dialog key={p.title}>
           <DialogTrigger
             className={`mb-5 mt-5 uppercase ${
@@ -88,8 +95,8 @@ export default function Projects() {
                 </div>
               </DialogDescription>
             </DialogHeader>
-            <DialogFooter>
-              <ImageSlider project={index} url={p.url} />
+            <DialogFooter className="w-full max-h-[600px] overflow-auto">
+              <ImageSlider images={p.images} url={p.url} />
             </DialogFooter>
           </DialogContent>
         </Dialog>

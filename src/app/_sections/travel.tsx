@@ -1,7 +1,7 @@
 import Link from "next/link";
 import TypewriterTitle from "../../_components/TypewriterTitle";
 import "../globals.css";
-import useMediaQuery from "../_hooks/use-media-query";
+import useMediaQuery from "../_hooks/useMediaQuery";
 import CardStack from "@/_components/carddeck/CardStack";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";

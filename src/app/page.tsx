@@ -6,7 +6,7 @@ import Typewriter from "typewriter-effect";
 import "./globals.css";
 import About from "./_sections/about";
 import Projects from "./_sections/projects";
-import useMediaQuery from "./_hooks/use-media-query";
+import useMediaQuery from "./_hooks/useMediaQuery";
 import TieFighter from "@/_components/TieFighter";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";

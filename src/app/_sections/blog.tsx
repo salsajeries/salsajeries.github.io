@@ -1,7 +1,7 @@
 import Link from "next/link";
 import TypewriterTitle from "../../_components/TypewriterTitle";
 import "../globals.css";
-import useMediaQuery from "../_hooks/use-media-query";
+import useMediaQuery from "../_hooks/useMediaQuery";
 import { Alert, AlertDescription, AlertTitle } from "@/_components/ui/alert";
 
 export default function Blog() {
