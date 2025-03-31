@@ -9,7 +9,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/_components/ui/dialog";
-//import Data from "../_data/project_data.json";
 import TypewriterTitle from "@/_components/TypewriterTitle";
 import useMediaQuery from "../_hooks/useMediaQuery";
 import ImageSlider from "../../_components/ImageSlider";
@@ -19,16 +18,17 @@ import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
 import Link from "next/link";
 import useGetProjects from "../_hooks/useGetProjects";
 import { Project } from "@/types";
-import { useEffect } from "react";
+import Animate from "@/_components/Animate";
 
 export default function Projects() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
+  
   const { projects, loading, error } = useGetProjects();
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <Animate>Loading...</Animate>;
+  if (error) return <Animate>Error: {error}</Animate>;
 
   return (
+    <Animate key={loading ? 1 : 0}>
     <div
       className={`flex flex-col p-10 justify-center 
       ${isDesktop ? "w-[50vw] items-end" : "w-[100vw] items-center"}`}
@@ -102,5 +102,6 @@ export default function Projects() {
         </Dialog>
       ))}
     </div>
+    </Animate>
   );
 }

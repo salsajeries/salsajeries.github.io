@@ -34,7 +34,7 @@ export default function ImageSlider(props: { images?: string[]; url?: string }) 
                       <Image
                         src={image}
                         alt={`Project image ${i}`}
-                        layout="fill"
+                        fill={true}
                         objectFit="contain"
                         className="rounded-xl" // Apply rounded corners here
                       />
@@ -45,7 +45,7 @@ export default function ImageSlider(props: { images?: string[]; url?: string }) 
                     <Image
                       src={image}
                       alt={`Project image ${i}`}
-                      layout="fill"
+                      fill={true}
                       objectFit="contain"
                       className="rounded-xl" // Apply rounded corners here
                     />

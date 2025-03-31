@@ -20,7 +20,7 @@ import {
   TooltipTrigger,
 } from "@/_components/ui/tooltip";
 import Travel from "./_sections/travel";
-import { motion } from "framer-motion";
+import Animate from "@/_components/Animate";
 
 export default function Home() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
@@ -127,16 +127,7 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
           </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0,
-              ease: [0, 0.71, 0.2, 1.01],
-            }}
-            className="flex flex-col items-center"
-          >
+          <Animate>
             <div
               onClick={() => scrollToSection("empty-home")}
               className="cursor-pointer"
@@ -214,7 +205,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </Animate>
         </div>
       </div>
       <section className="h-[100vh]" id="empty-home"></section>
@@ -223,69 +214,25 @@ export default function Home() {
         className="h-[100vh] flex items-center justify-end p-10"
         id="about"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 0,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-          className="flex flex-col items-center"
-        >
-          <About />
-        </motion.div>
+        <About />
       </section>
       <section
         className="h-[100vh] flex items-center justify-end p-10"
         id="projects"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 0,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-          className="flex flex-col items-center"
-        >
-          <Projects />
-        </motion.div>
+        <Projects />
       </section>
       <section
         className="h-[100vh] flex items-center justify-end p-10"
         id="travel"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 0,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-          className="flex flex-col items-center"
-        >
-          <Travel />
-        </motion.div>
+        <Travel />
       </section>
       <section
         className="h-[100vh] flex items-center justify-end p-10"
         id="blogs"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 0,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-          className="flex flex-col items-center"
-        >
-          <Blog />
-        </motion.div>
+        <Blog />
       </section>
       <section className="relative z-10 bg-custom-dark-background text-card-bg">
         <div className="flex flex-col h-[100vh] p-10 z-10 justify-center items-center text-xl">
