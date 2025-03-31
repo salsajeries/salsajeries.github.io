@@ -2,16 +2,14 @@ import Link from "next/link";
 import TypewriterTitle from "../../_components/TypewriterTitle";
 import "../globals.css";
 import useMediaQuery from "../_hooks/useMediaQuery";
-import { useRef } from "react";
-import useGetPostcards from "../_hooks/useGetPostcards";
+import useGetPostcards from "../_hooks/useGetPostcardImages";
 import CardDeck from "@/_components/CardDeck";
 import Animate from "@/_components/Animate";
 
 export default function Travel() {
   const isDesktop = useMediaQuery("(min-width: 786px)");
-  const ref = useRef(null);
 
-  const { postcards, loading, error } = useGetPostcards();
+  const { images, loading, error } = useGetPostcards();
   if (loading) return <Animate>Loading...</Animate>;
   if (error) return <Animate>Error: {error}</Animate>;
 
@@ -37,7 +35,7 @@ export default function Travel() {
         </p>
 
         <div className="flex flex-col items-center w-auto h-full gap-4 pl-10 pr-10">
-          <CardDeck images={postcards} width="300px" />
+          <CardDeck images={images} width="300px" />
           <Link
             href={"/travel"}
             className="p-2 underline underline-offset-4 hover:opacity-80 hover:scale-110 active:scale-90 transition ease-in-out duration-200"

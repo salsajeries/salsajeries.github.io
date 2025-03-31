@@ -11,22 +11,13 @@ export interface Project {
   images: string[]; // Image sources for the project
 }
 
-/**
- * Interface for postcard data in CardStack
- */
-export interface PostCardData {
-  title: string; // Title of the postcard city
-  description: string; // Description of the postcard city visit
-  dates: string; // Dates of visit to the postcard city
-  imageSrc: string; // Image source for the postcard
-  href: string; // Link to city page
-}
-
 export interface PostcardData {
+  id: number; // Unique ID of the postcard, used for sorting
   city: string; // City name
   country: string; // Country name
   dates: string; // Dates of visit
   description: string; // Description of visit
   images: string[]; // Image sources
+  journalFile: string;  // Journal file source
   postcard: string; // Postcard image source
 }

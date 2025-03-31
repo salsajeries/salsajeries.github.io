@@ -1,32 +1,24 @@
 "use client";
 
-import CardStack from "@/_components/carddeck/CardStack";
+import Animate from "@/_components/Animate";
+import CardDeck from "@/_components/CardDeck";
 import TypewriterTitle from "@/_components/TypewriterTitle";
-
-import { getTravelImages } from "@/lib/firebaseUtils";
-import { useEffect, useState } from "react";
-
-import Image from "next/image";
+import useGetPostcardInfo from "@/app/_hooks/useGetPostcardInfo";
 
 export default function Travel() {
 
-  const [images, setImages] = useState<string[]>([]);
+  const { postcards, loading, error } = useGetPostcardInfo();
+  if (loading) return <Animate>Loading...</Animate>;
+  if (error) return <Animate>Error: {error}</Animate>;
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      const urls = await getTravelImages();
-      setImages(urls);
-    }
-    fetchImages();
-  }, []);
 
   return (
-    <div>
+    <Animate key={loading ? 1 : 0}>
       <TypewriterTitle title={"travel"} size={"6vw"} />
-      <CardStack />
-      {images.map((url, index) => (
-        <Image key={index} src={url} alt={`travel image ${index}`} width={"100"} height={"100"} />
-      ))}
-    </div>
+      <div className="w-full flex flex-row justify-between">
+        <p>Test1</p>
+        <CardDeck images={postcards.map(postcard => postcard.postcard)} width="300px" />
+      </div>
+    </Animate>
   );
 }
